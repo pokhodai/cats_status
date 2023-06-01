@@ -32,8 +32,6 @@ class DownloadWorker @AssistedInject constructor(
     private val downloadRepository: DownloadRepository,
 ): CoroutineWorker(context, workerParameters) {
 
-    private var status_code: Int? = null
-
     override suspend fun doWork(): Result {
         startForeground()
         delay(WORK_DELAY)
@@ -77,9 +75,5 @@ class DownloadWorker @AssistedInject constructor(
                     .build()
             )
         )
-    }
-
-    fun setStatusCode(status_code: Int) {
-        this.status_code = status_code
     }
 }
