@@ -56,7 +56,6 @@ class DownloadWorker @AssistedInject constructor(
                         }
                     }
 
-                    Log.d("TAGATG", "Tag "+workDataOf(Worker.IMAGE_URI to file.toUri().toString()))
                     return@withContext Result.success(workDataOf(Worker.IMAGE_URI to file.toUri().toString()))
                 }
                 return@withContext Result.failure()
